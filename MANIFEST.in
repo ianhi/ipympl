@@ -1,4 +1,5 @@
-recursive-include ipympl/static *.*
+recursive-include ipympl/nbextension *.*
+recursive-include ipympl/labextension *.*
 
 include js/*.tgz
 include js/package.json

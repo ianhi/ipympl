@@ -31,7 +31,10 @@ jstargets = [
 ]
 
 data_files_spec = [
-    ('share/jupyter/nbextensions/jupyter-matplotlib', 'ipympl/static', '*.*'),
+    ('share/jupyter/nbextensions/jupyter-matplotlib',
+     'ipympl/nbextension', '*.*'),
+    ('share/jupyter/labextensions/jupyter-matplotlib',
+     'ipympl/labextension', "*.*"),
     ('etc/jupyter/nbconfig/notebook.d', '.', 'jupyter-matplotlib.json'),
 ]
 

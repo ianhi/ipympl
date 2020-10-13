@@ -39,48 +39,9 @@ conda install -c conda-forge ipympl
 pip install ipympl
 ```
 
-### Install the JupyterLab extension
+### Use in JupyterLab
 
-In order to install the JupyterLab extension `jupyter-matplotlib`, you will first need to install `nodejs`, you can install it with `conda` doing
-
-```bash
-conda install -c conda-forge nodejs
-```
-
-Starting from ipympl `0.5.6`, **you do not need to manually install the JupyterLab extension**, but you still need to install the JupyterLab widget manager:
-```bash
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
-# If you already installed the @jupyter-widgets/jupyterlab-manager extension, you will still need to rebuild JupyterLab after you installed ipympl
-jupyter lab build
-```
-
-#### Install an old JupyterLab extension
-
-You will need to install the right `jupyter-matplotlib` version, according to the `ipympl` and `jupyterlab` versions you installed.
-For example, if you installed ipympl `0.5.1`, you need to install jupyter-matplotlib `0.7.0`, and this version is only compatible with JupyterLab `1`.
-
-```bash
-conda install -c conda-forge ipympl==0.5.1
-jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-matplotlib@0.7.0
-```
-
-Versions lookup table:
-
-
-| `ipympl` | `jupyter-matplotlib` | `JupyterLab` | `Matplotlib` |
-|----------|----------------------|--------------|--------------|
-| 0.5.8    | 0.7.4                | 1 or 2       | 3.3.1        |
-| 0.5.7    | 0.7.3                | 1 or 2       | 3.2.*        |
-| ...      | ...                  | ...          |              |
-| 0.5.3    | 0.7.2                | 1 or 2       |              |
-| 0.5.2    | 0.7.1                | 1            |              |
-| 0.5.1    | 0.7.0                | 1            |              |
-| 0.5.0    | 0.6.0                | 1            |              |
-| 0.4.0    | 0.5.0                | 1            |              |
-| 0.3.3    | 0.4.2                | 1            |              |
-| 0.3.2    | 0.4.1                | 1            |              |
-| 0.3.1    | 0.4.0                | 0 or 1       |              |
+If you want to use ipympl in JupyterLab, we recommend using JupyterLab >= 3.
 
 ### For a development installation (requires nodejs):
 
