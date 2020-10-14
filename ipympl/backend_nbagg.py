@@ -24,7 +24,7 @@ from matplotlib.backend_bases import (ShowBase, NavigationToolbar2,
                                       FigureCanvasBase, cursors)
 
 here = os.path.dirname(__file__)
-with open(os.path.join(here, 'static', 'package.json')) as fid:
+with open(os.path.join(here, 'nbextension', 'package.json')) as fid:
     js_semver = '^%s' % json.load(fid)['version']
 
 cursors_str = {
