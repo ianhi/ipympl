@@ -22,10 +22,12 @@ install:
   - conda update -q conda
   - conda info -a
   - conda install -c conda-forge mamba
-  - mamba install -c conda-forge nodejs=13 matplotlib
+  - mamba install -c conda-forge nodejs=13 matplotlib pytest nbval
+  - pip install pytest-tornasync --no-deps
   - mamba install jupyterlab=3 ipywidgets jupyterlab_widgets -c conda-forge/label/jupyterlab_rc -c conda-forge/label/jupyterlab_server_rc -c conda-forge/label/jupyterlab_widgets_rc -c conda-forge
   - pip install .
 script:
+  - pytest
   - test -d $HOME/miniconda/share/jupyter/nbextensions/jupyter-matplotlib
   - test -f $HOME/miniconda/share/jupyter/nbextensions/jupyter-matplotlib/extension.js
   - test -f $HOME/miniconda/share/jupyter/nbextensions/jupyter-matplotlib/index.js
