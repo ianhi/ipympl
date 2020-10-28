@@ -53,7 +53,8 @@ setup_args = dict(
     install_requires=[
         'ipykernel>=4.7',
         'ipywidgets>=7.5.0',
-        'matplotlib>=2.0.0'
+        'matplotlib>=2.0.0',
+        'jupyterlab_widgets>=1.0.0a6'
     ],
     packages=find_packages(),
     zip_safe=False,
