@@ -32,9 +32,10 @@ jstargets = [
 
 data_files_spec = [
     ('share/jupyter/nbextensions/jupyter-matplotlib',
-     'ipympl/nbextension', '*.*'),
+     'ipympl/nbextension', '**'),
     ('share/jupyter/labextensions/jupyter-matplotlib',
-     'ipympl/labextension', "*.*"),
+     'ipympl/labextension', "**"),
+    ('share/jupyter/labextensions/jupyter-matplotlib', '.', 'install.json'),
     ('etc/jupyter/nbconfig/notebook.d', '.', 'jupyter-matplotlib.json'),
 ]
 
@@ -54,7 +55,7 @@ setup_args = dict(
         'ipykernel>=4.7',
         'ipywidgets>=7.5.0',
         'matplotlib>=2.0.0',
-        'jupyterlab_widgets>=1.0.0a6'
+        'jupyterlab_widgets>=1.0.0'
     ],
     packages=find_packages(),
     zip_safe=False,
