@@ -15,7 +15,7 @@ from jupyter_packaging import (
 # Name of the project
 name = 'ipympl'
 
-here = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.abspath(__file__))
 long_description = 'Matplotlib Jupyter Extension'
 
 log.info('setup.py entered')
@@ -24,12 +24,12 @@ log.info('$PATH=%s' % os.environ['PATH'])
 # Get ipympl version
 version = get_version(os.path.join(name, '_version.py'))
 
-js_dir = os.path.join(here, 'js')
+js_dir = os.path.join(HERE, 'js')
 
 # Representative files that should exist after a successful build
 jstargets = [
-    os.path.join('ipympl', 'nbextension', 'index.js'),
-    os.path.join('ipympl', 'labextension', 'package.json'),
+    os.path.join(HERE, 'ipympl', 'nbextension', 'index.js'),
+    os.path.join(HERE, 'ipympl', 'labextension', 'package.json'),
 ]
 
 data_files_spec = [
