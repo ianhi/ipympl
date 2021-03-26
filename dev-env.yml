@@ -1,0 +1,17 @@
+name: ipympl-test
+channels:
+    - conda-forge
+dependencies:
+    - pip
+    - yarn
+    - jupyter-packaging
+    - jupyterlab=3
+    - ipywidgets>=7.6
+    - flake8
+    - pillow
+    - numpy
+    - matplotlib
+    - pytest
+    - nbval
+    - pip:
+        - build
