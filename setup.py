@@ -45,7 +45,7 @@ js_command = combine_commands(
     install_npm(js_dir, npm=["yarn"], build_cmd='build:all'), ensure_targets(jstargets),
 )
 
-is_repo = os.path.exists(os.path.join(here, '.git'))
+is_repo = os.path.exists(os.path.join(HERE, '.git'))
 if is_repo:
     cmdclass['jsdeps'] = js_command
 else:
