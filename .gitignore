@@ -5,14 +5,27 @@ build/
 *.py[cod]
 node_modules/
 
-# Generated Javascript
-ipympl/nbextension/
-ipympl/labextension/
-ipympl/*.tgz
-js/*.tgz
-
 # OS X
 .DS_Store
 
 # vscode
 .vscode/
+
+lib/
+# NPM
+# ----
+
+**/node_modules/
+ipympl/nbextension/index.*
+ipympl/nbextension/package.json
+ipympl/labextension/*.tgz
+
+# Coverage data
+# -------------
+**/coverage/
+
+# Packed lab extensions
+ipympl/labextension
+
+# OS specific items
+.DS_Store

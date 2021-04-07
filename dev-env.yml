@@ -1,4 +1,4 @@
-name: ipympl-dev
+name: ipympl-test
 channels:
     - conda-forge
 dependencies:
