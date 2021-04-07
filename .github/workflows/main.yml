@@ -64,7 +64,7 @@ jobs:
       run: flake8 ipympl --ignore=E501,W504,W503
 
     - name: Test JS linters
-      working-directory: js
+      working-directory: ts
       run: |
         npm run eslint:check
         npm run prettier:check
