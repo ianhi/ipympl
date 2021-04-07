@@ -45,6 +45,7 @@ jobs:
       run: |
         echo $CONDA_PREFIX
         ls $CONDA_PREFIX/share/jupyter
+        ls $CONDA_PREFIX/share/jupyter/nbextensions/
         ls $CONDA_PREFIX/share/jupyter/nbextensions/jupyter-matplotlib
         test -f $CONDA_PREFIX/share/jupyter/nbextensions/jupyter-matplotlib/extension.js
         test -f $CONDA_PREFIX/share/jupyter/nbextensions/jupyter-matplotlib/index.js
