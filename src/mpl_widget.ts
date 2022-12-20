@@ -235,19 +235,22 @@ export class MPLCanvasModel extends DOMWidgetModel {
     }
 
     handle_binary(msg: any, dataviews: any) {
-        console.log(msg);
+        console.log(msg.number);
         const url_creator = window.URL || window.webkitURL;
 
         const buffer = new Uint8Array(dataviews[0].buffer);
         const blob = new Blob([buffer], { type: 'image/png' });
         const image_url = url_creator.createObjectURL(blob);
 
+        console.log(msg.number);
         // Free the memory for the previous frames
         if (this.image.src) {
             url_creator.revokeObjectURL(this.image.src);
         }
+        console.log(msg.number);
 
         this.image.src = image_url;
+        console.log(msg.number);
 
         this.set('_data_url', this.offscreen_canvas.toDataURL());
 
@@ -334,10 +337,12 @@ export class MPLCanvasModel extends DOMWidgetModel {
             }
 
             this.offscreen_context.drawImage(this.image, 0, 0);
+            console.log('done draw');
 
             this._for_each_view((view: MPLCanvasView) => {
                 view.update_canvas();
             });
+            console.log('done update');
         };
 
         const dataUrl = this.get('_data_url');
