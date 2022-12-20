@@ -235,6 +235,7 @@ export class MPLCanvasModel extends DOMWidgetModel {
     }
 
     handle_binary(msg: any, dataviews: any) {
+        console.log(msg);
         const url_creator = window.URL || window.webkitURL;
 
         const buffer = new Uint8Array(dataviews[0].buffer);

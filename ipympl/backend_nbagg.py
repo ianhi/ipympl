@@ -235,6 +235,8 @@ class Canvas(DOMWidget, FigureCanvasWebAggCore):
     current_dpi_ratio = 1.0
 
     def __init__(self, figure, *args, **kwargs):
+        self.N = 0
+        self.datas = []
         DOMWidget.__init__(self, *args, **kwargs)
         FigureCanvasWebAggCore.__init__(self, figure, *args, **kwargs)
 
@@ -311,6 +313,7 @@ class Canvas(DOMWidget, FigureCanvasWebAggCore):
 
         # Update _data_url
         if self.syncing_data_url:
+            print('here?')
             data = self._last_buff.view(dtype=np.uint8).reshape(
                 (*self._last_buff.shape, 4)
             )
@@ -319,7 +322,11 @@ class Canvas(DOMWidget, FigureCanvasWebAggCore):
                 self._data_url = b64encode(png.getvalue()).decode('utf-8')
 
         # Actually send the data
-        self.send({'data': '{"type": "binary"}'}, buffers=[data])
+        self.send(
+            {'data': '{' + f'"type": "binary", "number":{self.N}' + '}'}, buffers=[data]
+        )
+        self.N += 1
+        self.datas.append(data)
 
     def new_timer(self, *args, **kwargs):
         return TimerTornado(*args, **kwargs)
